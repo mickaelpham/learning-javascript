@@ -15,9 +15,15 @@ function render_items(items) {
   var list = document.createElement('ul');
   // for each item, append a child element to the list
   for (var i = 0; i < items.length; i++) {
+    // prepare the delete link
+    var delete_link = document.createElement('a');
+    delete_link.setAttribute('href', '#');
+    delete_link.appendChild(document.createTextNode('del'));
     // prepare the child element
     var li = document.createElement('li');
-    li.appendChild(document.createTextNode(items[i]));
+    li.appendChild(document.createTextNode(items[i] + ' [ '));
+    li.appendChild(delete_link);
+    li.appendChild(document.createTextNode(' ]'));
     // add it to the list
     list.appendChild(li);
   }
