@@ -19,6 +19,12 @@ function render_items(items) {
     var delete_link = document.createElement('a');
     delete_link.setAttribute('href', '#');
     delete_link.appendChild(document.createTextNode('del'));
+    // add the delete onclick event
+    delete_link.onclick = (function (index) {
+      return function() {
+        remove_item(index);
+      };
+    })(i);
     // prepare the child element
     var li = document.createElement('li');
     li.appendChild(document.createTextNode(items[i] + ' [ '));
@@ -29,6 +35,12 @@ function render_items(items) {
   }
   // append the list to the div container
   container.appendChild(list);
+}
+
+function remove_item(index) {
+  console.log('Removing item #' + index);
+  db.items.splice(index, 1);
+  render_items(db.items);
 }
 
 console.log('HTML5 Storage supported: ' + supports_html5_storage());
@@ -44,7 +56,7 @@ if (supports_html5_storage()) {
   // assign an event to the submit button
   var submit_button = document.getElementById('new-item-submit');
   
-  submit_button.onclick = function(e) {
+  submit_button.onclick = function (e) {
     // make sure we do not submit the form
     e.preventDefault();
     // get the value from the text field
