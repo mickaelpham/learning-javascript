@@ -40,6 +40,8 @@ function render_items(items) {
 function remove_item(index) {
   console.log('Removing item #' + index);
   db.items.splice(index, 1);
+  // save it to the local storage
+  localStorage.setItem('items', JSON.stringify(db.items));
   render_items(db.items);
 }
 
@@ -49,9 +51,17 @@ if (supports_html5_storage()) {
 
   // retrieve the local storage list of items if any
   var db = {};
+  db.items = localStorage.getItem('items');
 
-  // set up the array of items
-  db.items = [];
+  // initialize it if needed
+  if (db.items === null) {
+    db.items = [];
+  } else {
+    db.items = JSON.parse(db.items);
+  }
+
+  // render the list
+  render_items(db.items);
   
   // assign an event to the submit button
   var submit_button = document.getElementById('new-item-submit');
@@ -64,6 +74,8 @@ if (supports_html5_storage()) {
     console.log('New item value: ' + new_item.value);
     // push it to the current list of items
     db.items.push(new_item.value);
+    // save it to the local storage
+    localStorage.setItem('items', JSON.stringify(db.items));
     // clear the field
     new_item.value = '';
     // re-render the list of items
