@@ -1,0 +1,17 @@
+.site-title {
+  margin-bottom: .5em;
+}
+
+.site-title a {
+  color: #595959;
+}
+
+.site-title a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
