@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning JavaScript &mdash; Game</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container site-title">
+      <h1><a href="index.html">Learning JavaScript</a></h1>
+    </div>
+
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="breadcrumb.html">Breadcrumb</a></li>
+          <li><a href="localstorage.html">Local Storage</a></li>
+          <li class="active"><a href="game.html">Game</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="page-header">
+        <h3>Guess Game!</h3>
+      </div>
+
+      <div id="messages"></div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <form role="form">
+            <div class="form-group">
+              <label for="inputNumber">Enter a number between 1 and 100:</label>
+              <input type="number" class="form-control" id="inputNumber">
+            </div>
+            <p>
+              <input type="submit" class="btn btn-primary" value="Submit" id="btnSubmit">
+              <input type="button" class="btn btn-default" value="Reset" id="btnReset">
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h3>Attempts</h3>
+      </div>
+      <div id="attempts"></div>
+  
+    </div>
+    
+    <script src="js/game.js"></script>
+  </body>
+</html>
