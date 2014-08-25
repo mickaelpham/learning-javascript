@@ -5,4 +5,4 @@ Simple todo list using the [Web Storage](http://www.w3.org/TR/webstorage/) imple
 
 Using plain JavaScript, because I find it better to learn the basics.
 
-View the [demo online](http://mickaelpham.github.io/todo-list-localstorage/)!
+View the [demo online](http://mickaelpham.github.io/learning-javascript/)!

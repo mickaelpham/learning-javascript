@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+tbody tr:hover,
+.current-column {
+  background-color: #E8FAFF;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: .5em .5em;
+  text-align: center;
+}
+
+tbody td {
+  padding: 1em .5em;
+}
+
+caption {
+  font-weight: bold;
+  caption-side: bottom;
+  margin-top: 1em;
+  margin-bottom: 40px;
+}
+
+.cell-selected {
+  background-color: #B8FFBC;
+}
